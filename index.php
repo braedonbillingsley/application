@@ -18,8 +18,6 @@ $f3 = Base::instance(); // :: is invoking a static method in php
 
 // Define a default route.
 $f3->route('GET /', function () { // Anonymous function
-    echo "My Application";
-
     // Display a view page
     $view = new Template();
     echo $view->render('views/home.html');
