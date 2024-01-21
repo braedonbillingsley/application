@@ -1,0 +1,15 @@
+{
+  "name": "bbilling/328/application",
+  "description": "Podcast Job Application Page",
+  "authors": [
+    {
+      "name": "Braedon Billingsley",
+      "email": "billingsley.braedon@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master",
+    "guzzlehttp/guzzle": "^7.0"
+  }
+
+}
