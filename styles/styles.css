@@ -16,8 +16,6 @@ header {
     padding: 16px;
     background-color: #E8E8E8;
     height: 50px;
-    z-index: -1;
-    position: absolute;
 }
 
 .cover-image {
