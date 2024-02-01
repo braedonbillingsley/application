@@ -1,20 +1,23 @@
-blockquote {
+header {
+    height: 100px;
+    background-color: #FFFFFF;
+}
+
+.indent {
     margin-left: 20px;
+    margin-bottom: auto;
     font-size: 0.8rem;
     font-style: italic;
     border-bottom: none;
     border-top: none;
 }
 
-header {
-    height: 100px;
-    background-color: #FFFFFF;
-}
-
 .copyright {
     padding: 16px;
     background-color: #E8E8E8;
     height: 50px;
+    z-index: -1;
+    position: absolute;
 }
 
 .cover-image {
@@ -22,12 +25,9 @@ header {
     float: right;
 }
 
-.row-height {
-    height: calc(100vh - 100px);
-}
 
 p {
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 .main {
