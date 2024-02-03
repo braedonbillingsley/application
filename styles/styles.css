@@ -16,6 +16,9 @@ header {
     padding: 16px;
     background-color: #E8E8E8;
     height: 50px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .cover-image {
@@ -31,5 +34,6 @@ p {
 .main {
     background-color: #F9F9F9;
     padding-top: 4px;
+    margin-bottom: 50px;
 }
 
