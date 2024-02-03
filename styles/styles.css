@@ -3,6 +3,12 @@ header {
     background-color: #FFFFFF;
 }
 
+.anchor {
+    color: inherit;
+    text-decoration: none;
+    list-style: none;
+}
+
 .indent {
     margin-left: 20px;
     margin-bottom: auto;
