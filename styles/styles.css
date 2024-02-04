@@ -1,21 +1,14 @@
-header {
-    height: 100px;
+nav {
     background-color: #FFFFFF;
+}
+
+p {
+    font-size: 1rem;
 }
 
 .anchor {
     color: inherit;
     text-decoration: none;
-    list-style: none;
-}
-
-.indent {
-    margin-left: 20px;
-    margin-bottom: auto;
-    font-size: 0.8rem;
-    font-style: italic;
-    border-bottom: none;
-    border-top: none;
 }
 
 .copyright {
@@ -27,19 +20,9 @@ header {
     width: 100%;
 }
 
-.cover-image {
-    width: 524px;
-    float: right;
-}
-
-
-p {
-    font-size: 1rem;
-}
-
 .main {
     background-color: #F9F9F9;
     padding-top: 4px;
-    margin-bottom: 50px;
 }
+
 
