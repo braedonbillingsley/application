@@ -25,7 +25,6 @@ $f3->route('GET /', function () { // Anonymous function
 });
 
 $f3->route('GET|POST /info', function ($f3) { // Anonymous function
-    echo "Applicant Personal Information";
 
     // If the form has been posted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
