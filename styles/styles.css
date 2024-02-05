@@ -25,4 +25,19 @@ p {
     padding-top: 4px;
 }
 
+.form-check-label,
+input[type="checkbox"] {
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+}
 
+.form-group .form-check {
+    display: flex;
+}
+
+#submit-button {
+    width: 100%;
+    max-width: 33.33%;
+    white-space: nowrap;
+    overflow: hidden;
+}
