@@ -23,96 +23,95 @@
         </ul>
     </nav>
     <div class="main align-items-start p-4">
-        <form action="summary" method="post" class="form-horizontal">
+        <form action="mail" method="post" class="form-horizontal">
             <div class="col-lg-12">
                 <label class="form-label mb-0 display-6">
                     <strong>Job Openings Mailing Lists</strong>
                 </label>
                 <hr class="mt-2">
                 <div class="">
-                    <div class="col-lg-12"> <!-- Form fields column-->
+                    <div class="col-lg-12">
                         <div class="form-group">
 
                             <label class="form-label fw-bold">Software Development Jobs</label><br/>
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="checkbox" id="javascript">
+                                    <input type="checkbox" id="javascript" name="tech-javascript">
                                     <label class="form-check-label" for="javascript">JavaScript</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="php">
+                                    <input type="checkbox" id="php" name="tech-php">
                                     <label class="form-check-label" for="php">PHP</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="java">
+                                    <input type="checkbox" id="java" name="tech-java">
                                     <label class="form-check-label" for="java">Java</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="python">
+                                    <input type="checkbox" id="python" name="tech-python">
                                     <label class="form-check-label" for="python">Python</label>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="checkbox" id="html">
+                                    <input type="checkbox" id="html" name="tech-html">
                                     <label class="form-check-label" for="html">HTML</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="css">
+                                    <input type="checkbox" id="css" name="tech-css">
                                     <label class="form-check-label" for="css">CSS</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="reactjs">
+                                    <input type="checkbox" id="reactjs" name="tech-reactjs">
                                     <label class="form-check-label" for="reactjs">ReactJS</label>
                                 </div>
                                 <div class="col-3">
-                                    <input type="checkbox" id="nodejs">
+                                    <input type="checkbox" id="nodejs" name="tech-nodejs">
                                     <label class="form-check-label" for="nodejs">NodeJs</label>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-12"> <!-- Form fields column-->
+                    <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-label fw-bold mt-1">Industry Verticals</label><br>
 
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="checkbox" id="saas">
+                                    <input type="checkbox" id="saas" name="ind-saas">
                                     <label class="form-check-label" for="saas">SaaS</label>
-
                                 </div>
 
                                 <div class="col-3">
-                                    <input type="checkbox" id="health-tech">
+                                    <input type="checkbox" id="health-tech" name="ind-health-tech">
                                     <label class="form-check-label" for="health-tech">Health tech</label>
                                 </div>
 
                                 <div class="col-3">
-                                    <input type="checkbox" id="ag-tech">
+                                    <input type="checkbox" id="ag-tech" name="ind-ag-tech">
                                     <label class="form-check-label" for="ag-tech">Ag tech</label>
                                 </div>
 
                                 <div class="col-3">
-                                    <input type="checkbox" id="hr-tech">
+                                    <input type="checkbox" id="hr-tech" name="ind-hr-tech">
                                     <label class="form-check-label" for="hr-tech">HR tech</label><br>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-3">
-                                    <input type="checkbox" id="industrial-tech">
+                                    <input type="checkbox" id="industrial-tech" name="ind-industrial-tech">
                                     <label class="form-check-label" for="industrial-tech">Industrial tech</label>
                                 </div>
 
                                 <div class="col-3">
-                                    <input type="checkbox" id="cyber-security">
+                                    <input type="checkbox" id="cyber-security" name="ind-cyber-security">
                                     <label class="form-check-label" for="cyber-security">Cybersecurity</label>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12 text-end"> <!-- Text alignment is set to 'end' which corresponds to 'right' in LTR websites -->
+                        <div class="col-lg-12 text-end">
                             <button type="submit" class="btn btn-success fw-bold" id="submit-button">
                                 Next >
                             </button>

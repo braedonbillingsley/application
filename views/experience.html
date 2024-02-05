@@ -23,46 +23,46 @@
         </ul>
     </nav>
     <div class="main align-items-start p-4">
-        <form action="mail" method="post" class="form-horizontal">
+        <form action="experience" method="post" class="form-horizontal">
             <div class="col-lg-12">
                 <label class="form-label mb-0 display-6">
                     <strong>Experience</strong>
                 </label>
                 <hr class="mt-2">
                 <div class="row">
-                    <div class="col-lg-8"> <!-- Form fields column-->
+                    <div class="col-lg-8">
                         <div class="form-group">
-                            <label for="bio" class="form-label fw-bold">Biography</label>
-                            <textarea class="form-control pb-3" id="bio" rows="9"></textarea>
+                            <label for='bio' class="form-label fw-bold">Biography</label>
+                            <textarea class="form-control pb-3" id="bio" name="bio" rows="9"></textarea>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group mb-3">
                             <label for="github" class="form-label fw-bold">Github Link</label>
-                            <input type="url" class="form-control w-100" id="github" placeholder="github.com/my_github">
+                            <input type="text" class="form-control w-100" id="github" name="github" placeholder="github.com/my_github">
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label mb-0 fw-bold">Years Experience</label><br>
 
-                            <input class="p-1" type="radio" id="xp-1" name="experience-1" value="0-2">
+                            <input class="p-1" type="radio" id="xp-1" name="experience" value="0-2">
                             <label class="p-1" for="xp-1">0-2</label>
 
-                            <input class="p-1" type="radio" id="xp-2" name="experience-2" value="2-4">
+                            <input class="p-1" type="radio" id="xp-2" name="experience" value="2-4">
                             <label class="p-1" for="xp-2">2-4</label>
 
-                            <input class="p-1" type="radio" id="xp-3" name="experience-3" value="4+">
+                            <input class="p-1" type="radio" id="xp-3" name="experience" value="4+">
                             <label class="p-1" for="xp-3">4+</label>
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label mb-0 fw-bold">Willing To Relocate</label><br>
 
-                            <input class="p-1" type="radio" id="relocate-yes" name="yes" value="yes">
+                            <input class="p-1" type="radio" id="relocate-yes" name="relocate" value="yes">
                             <label class="p-1" for="relocate-yes">Yes</label>
 
-                            <input class="p-1" type="radio" id="relocate-no" name="no" value="no">
+                            <input class="p-1" type="radio" id="relocate-no" name="relocate" value="no">
                             <label class="p-1" for="relocate-no">No</label>
 
-                            <input class="p-1" type="radio" id="relocate-maybe" name="maybe" value="maybe">
+                            <input class="p-1" type="radio" id="relocate-maybe" name="relocate" value="maybe">
                             <label class="p-1" for="relocate-maybe">Maybe</label>
                         </div>
                         <div class="form-group">
