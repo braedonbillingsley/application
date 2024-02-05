@@ -8,32 +8,63 @@
     <title>Audio Engineer | Summary</title>
 </head>
 <body>
-<header class="w-100 mw-100 mb-4">
-    <div class="container">
-        <nav class="navbar">
-            <ul>
-                <li class="nav-item list-unstyled">
-                    <a href="https://bbillingsley.greenriverdev.com/328/application/" class="fs-6 mb-2 anchor">Podcast USA LLC</a>
-                </li>
-                <li class="nav-item list-unstyled">
-                    <a href="https://bbillingsley.greenriverdev.com/328/application/" class="fs-5 mb-2 anchor">Audio Engineer Internship</a>
-                </li>
-                <li class="nav-item list-unstyled">
-                    <p class="small mb-0">Seattle Washington, Paid, 12 weeks</p>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<div class="container main">
-    <div class="row mt-4">
-        <div class="col-md-6">
-
-            <p>Text Here</p>
-
-        </div>
-        <div class="col-md-6">
-            <p>Text Here</p>
+<div class="container">
+    <nav class="navbar">
+        <ul class="m-3 mb-0 pb-1 pt-0 p-4">
+            <li class="nav-item list-unstyled mb-2">
+                <a href="https://bbillingsley.greenriverdev.com/328/application/" class="fs-6 anchor">Podcast USA LLC</a>
+            </li>
+            <li class="nav-item list-unstyled mb-2">
+                <a href="https://bbillingsley.greenriverdev.com/328/application/" class="fs-5 anchor">Audio Engineer Internship</a>
+            </li>
+            <li class="nav-item list-unstyled">
+                <p class="small">Seattle Washington, Paid, 12 weeks</p>
+            </li>
+        </ul>
+    </nav>
+    <div class="main align-items-start p-4">
+        <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-6 border">
+                    <div class="form-group">
+                        <p>Name: {{ isset(@firstName)  ? @firstName : 'Not provided' }}</p>
+                        <p>Last Name: {{ isset(@last_name) ? @last_name : 'Not provided' }}</p>
+                        <hr class="opacity-75">
+                        <p>Email: {{ isset(@email) ? @email : 'Not provided' }}</p>
+                        <hr class="mt-2">
+                        <p>State: {{ isset(@state) ? @state : 'Not provided' }}</p>
+                        <hr class="opacity-75">
+                        <p>Phone: {{ isset(@phone) ? @phone : 'Not provided' }}</p>
+                        <hr class="mt-2">
+                    </div>
+                    <div class="form-group">
+                        <p >Github Link: {{ isset(@github) ? @github : 'Not provided' }}</p>
+                        <hr class="opacity-75">
+                        <p>Experience: {{ isset(@experience_range) ? @experience_range : 'Not provided' }}</p>
+                        <hr class="mt-2">
+                        <p>Willing to Relocate: {{ isset(@relocate) ? @relocate : 'Not provided' }}</p>
+                        <hr class="opacity-75">
+                        <p>Mailing Lists: {{ isset(@selected_technologies) ? @selected_technologies : 'Not provided' }}</p>
+                        <hr class="mt-2">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class=" mb-3">
+                        <img class="img-fluid rounded" src="./images/headprofile.png" alt="mystery head">
+                    </div>
+                    <div class="form-group">
+                        <h3>Summary</h3>
+                        <p>{{ isset(@bio) ? @bio : 'Not provided' }}</p>
+                    </div>
+                </div>
+                <div class="row w-100 mx-auto">
+                    <div class="form-group d-flex justify-content-center">
+                        <button type="submit" class="fw-bold btn btn-success w-75">
+                            Submit My Application!
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
