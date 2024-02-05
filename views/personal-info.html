@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <nav class="navbar">
-        <ul class="m-3 mb-0 pb-1 p-4">
+        <ul class="m-3 mb-0 pb-1 pt-0 p-4">
             <li class="nav-item list-unstyled mb-2">
                 <a href="https://bbillingsley.greenriverdev.com/328/application/" class="fs-6 anchor">Podcast USA LLC</a>
             </li>
@@ -22,44 +22,61 @@
             </li>
         </ul>
     </nav>
-    <div class="main p-4">
-        <form action="#" method="post" class="form-horizontal">
-            <div class="row">
+    <div class="main d-flex align-items-start p-4">
+        <form action="experience" method="post" class="form-horizontal">
+            <div class="col-lg-12">
                 <label class="form-label mb-0 display-6">
                     <strong>Personal Information</strong>
                 </label>
                 <hr class="mt-2">
-
-                <div class="col-lg-8">
-                    <div class="col-lg-6">
-                        <label for="first-name" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="first-name">
-                        <label for="last-name" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="last-name">
+                <div class="row">
+                    <div class="col-lg-8 mb-auto"> <!-- Form fields column-->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="first-name" class="form-label fw-bold">First Name</label>
+                                <input type="text" class="form-control" id="first-name" placeholder="Sarah">
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="last-name" class="form-label fw-bold">Last Name</label>
+                                <input type="text" class="form-control" id="last-name" placeholder="Smith">
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="email" class="form-label fw-bold mt-2">Email</label>
+                                <input type="text" class="form-control w-100" id="email" placeholder="my.email@gmail.com">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 form-group">
+                                <label class="form-label fw-bold mt-2" for="state">State</label>
+                                <select class="custom-select form-control" id="state">
+                                    <option selected>Washington</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-6 mt-2">
+                                <label for="phone" class="form-label fw-bold">Phone</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="222-333-4444">
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-12 mt-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email">
+                    <div class="col-lg-4">
+                        <div class="row d-flex align-content-between pt-4 mt-1">
+                            <div class="col-lg-12 bg-dark-subtle p-0 pb-3">
+                                <p class="p-3 m-0">
+                                    <strong>Note:</strong> All information entered is protected by our
+                                    <strong>privacy policy.</strong> Profile information can only be viewed
+                                    by others with your permission.
+                                </p>
+                            </div>
+                            <div class="col-lg-12 p-0 pt-3 mt-4">
+                                <button type="submit"  class="btn btn-success w-100">
+                                    Next >
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 mt-3">
-                        <label for="state" class="form-label">State</label>
-                        <input type="text" class="form-control" id="state">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="text" class="form-control" id="phone">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <!-- Move to its own column on the right -->
-                    <div class="mt-4 mb-4 bg-dark-subtle">
-                        <p class="p-3">
-                            <strong>Note:</strong> All information entered is protected by our
-                            <strong>privacy policy.</strong> Profile information can only be viewed
-                            by others with your permission.
-                        </p>
-                    </div>
-                    <button href="experience" class="btn btn-success w-100">
-                    Next >
-                    </button>
                 </div>
             </div>
         </form>

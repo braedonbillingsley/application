@@ -29,13 +29,20 @@ $f3->route('GET|POST /info', function ($f3) { // Anonymous function
     // If the form has been posted
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-        $f3->reroute('/views/experience.html');
+        $f3->reroute('/experience');
 
         // TODO store in session, redirect to mail, then summary while storing user data in session.
     }
     // Display a view page
     $view = new Template();
     echo $view->render('views/personal-info.html');
+});
+
+$f3->route('GET|POST /experience', function () { // Anonymous function
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/experience.html');
+
 });
 // Run Fat-Free
 $f3->run(); // -> Invokes instance method in php
