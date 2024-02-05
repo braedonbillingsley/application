@@ -39,9 +39,17 @@ $f3->route('GET|POST /info', function ($f3) { // Anonymous function
 });
 
 $f3->route('GET|POST /experience', function () { // Anonymous function
+
     // Display a view page
     $view = new Template();
     echo $view->render('views/experience.html');
+
+});
+
+$f3->route('GET|POST /mail', function () { // Anonymous function
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/mail.html');
 
 });
 // Run Fat-Free
