@@ -10,10 +10,10 @@
   "require": {
     "bcosca/fatfree-core": "dev-master",
     "guzzlehttp/guzzle": "^7.0",
-    "ext-ctype": "*",
-    "autoload": {
-      "classmap": [ "model/" ]
-    }
+    "ext-ctype": "*"
+  },
+  "autoload": {
+    "classmap": [ "model/" ]
   }
 
 }

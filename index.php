@@ -7,22 +7,25 @@
  * @author Braedon Billingsley
  */
 
-//Turn on error reporting
-ini_set('display_errors', 1);
+ini_set('display_errors', 1); //Turn on error reporting
 error_reporting(E_ALL);
 
-//Require the autoload file.
-require_once('vendor/autoload.php');
+require_once('vendor/autoload.php'); //Require the autoload file.
 
 //Instantiate Fat-Free framework (F3)
 $f3 = Base::instance(); // :: is invoking a static method in php
 
-// function to process form data
-function processFormData($f3, $formFields, $redirect): void
-{
+/**
+ * Process form data and store it in the F3 hive.
+ *
+ * @param object $f3 The Fat-Free Framework object.
+ * @param array $formFields An array of form field names.
+ * @param string $redirect The URL to redirect to after processing the form data.
+ * @return void
+ */
+function processFormData(object $f3, array $formFields, string $redirect): void {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Store form data in the F3 hive
-        foreach ($formFields as $field) {
+        foreach ($formFields as $field) { // Store form data in the F3 hive
             $f3->set($field, $_POST[$field]);
         }
 
@@ -30,13 +33,13 @@ function processFormData($f3, $formFields, $redirect): void
     }
 }
 
-//default route.
+// Default route to - HOME
 $f3->route('GET /', function () {
     $view = new Template();
     echo $view->render('views/home.html');
 });
 
-// Route for personal info
+// Route to PERSONAL-INFO
 $f3->route('GET|POST /info', function ($f3) {
     processFormData($f3, ['first_name', 'last_name', 'email', 'state', 'phone'], '/experience');
 
@@ -44,7 +47,7 @@ $f3->route('GET|POST /info', function ($f3) {
     echo $view->render('views/personal-info.html');
 });
 
-// Route for experience
+// Route to EXPERIENCE
 $f3->route('GET|POST /experience', function ($f3) {
     processFormData($f3, ['bio', 'github', 'experience', 'relocate'], '/mail');
 
@@ -52,7 +55,7 @@ $f3->route('GET|POST /experience', function ($f3) {
     echo $view->render('views/experience.html');
 });
 
-// Route for mail
+// Route to MAIL
 $f3->route('GET|POST /mail', function ($f3) {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -74,6 +77,7 @@ $f3->route('GET|POST /mail', function ($f3) {
     echo $view->render('views/mail.html');
 });
 
+// Route to SUMMARY
 $f3->route('GET|POST /summary', function($f3) {
     $view = new Template();
     echo $view->render('views/summary.html');
