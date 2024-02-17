@@ -1,9 +1,10 @@
 <?php
 /**
- * Braedon Billingsley
- * 01/20/24
- * https://www.bbillingsley.greenriverdev.com/home/bbilling/public_html/328/application
  * This is my CONTROLLER for the application app.
+ *
+ * https://www.bbillingsley.greenriverdev.com/328/application
+ *
+ * @author Braedon Billingsley
  */
 
 //Turn on error reporting
@@ -12,13 +13,12 @@ error_reporting(E_ALL);
 
 //Require the autoload file.
 require_once('vendor/autoload.php');
-require_once('model/validate.php');
 
 //Instantiate Fat-Free framework (F3)
 $f3 = Base::instance(); // :: is invoking a static method in php
 
 // function to process form data
-function processFormData($f3, $formFields, $redirect)
+function processFormData($f3, $formFields, $redirect): void
 {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Store form data in the F3 hive
