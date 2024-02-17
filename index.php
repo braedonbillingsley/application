@@ -9,29 +9,14 @@
 
 ini_set('display_errors', 1); //Turn on error reporting
 error_reporting(E_ALL);
+session_start(); // Start or resume session
 
 require_once('vendor/autoload.php'); //Require the autoload file.
 
-//Instantiate Fat-Free framework (F3)
+//Instantiate Fat-Free framework (F3) and classes
 $f3 = Base::instance(); // :: is invoking a static method in php
-
-/**
- * Process form data and store it in the F3 hive.
- *
- * @param object $f3 The Fat-Free Framework object.
- * @param array $formFields An array of form field names.
- * @param string $redirect The URL to redirect to after processing the form data.
- * @return void
- */
-function processFormData(object $f3, array $formFields, string $redirect): void {
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        foreach ($formFields as $field) { // Store form data in the F3 hive
-            $f3->set($field, $_POST[$field]);
-        }
-
-        $f3->reroute($redirect);
-    }
-}
+$formController = new FormController();
+$dataLayer = new DataLayer();
 
 // Default route to - HOME
 $f3->route('GET /', function () {
@@ -40,16 +25,16 @@ $f3->route('GET /', function () {
 });
 
 // Route to PERSONAL-INFO
-$f3->route('GET|POST /info', function ($f3) {
-    processFormData($f3, ['first_name', 'last_name', 'email', 'state', 'phone'], '/experience');
+$f3->route('GET|POST /info', function ($f3) use ($dataLayer, $formController) {
+    $formController->processFormData($f3, $dataLayer->getPersonalInfoFormFields(), '/experience');
 
     $view = new Template();
     echo $view->render('views/personal-info.html');
 });
 
 // Route to EXPERIENCE
-$f3->route('GET|POST /experience', function ($f3) {
-    processFormData($f3, ['bio', 'github', 'experience', 'relocate'], '/mail');
+$f3->route('GET|POST /experience', function ($f3) use ($dataLayer, $formController) {
+    $formController->processFormData($f3, $dataLayer->getExperienceFormFields(), '/mail');
 
     $view = new Template();
     echo $view->render('views/experience.html');
