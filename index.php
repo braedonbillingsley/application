@@ -12,6 +12,7 @@ error_reporting(E_ALL);
 
 //Require the autoload file.
 require_once('vendor/autoload.php');
+require_once('model/validate.php');
 
 //Instantiate Fat-Free framework (F3)
 $f3 = Base::instance(); // :: is invoking a static method in php

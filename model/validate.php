@@ -1,7 +1,7 @@
 <?php
 
-function validName() {
-
+function validName($firstName, $lastName) {
+    return ctype_alpha($firstName.$lastName);
 }
 
 function validGithub() {
