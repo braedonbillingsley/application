@@ -17,7 +17,18 @@ class DataLayer {
      */
 
     function getPersonalInfoFormFields(): array {
-        return ['first_name', 'last_name', 'email', 'state', 'phone'];
+        return ['first_name', 'last_name', 'email', 'phone'];
+    }
+
+    /**
+     * Retrieves the optional form fields for personal information.
+     *
+     * This method returns an array of optional form fields that can be used to collect additional personal information.
+     *
+     * @return array The array of optional form fields for personal information. Each element represents a field name.
+     */
+    function getOptionalPersonalInfoFormFields(): array {
+        return ['state'];
     }
 
     /**
@@ -28,6 +39,15 @@ class DataLayer {
      * @return array The array of form fields for experience information. Each element represents a field name.
      */
     function getExperienceFormFields(): array {
-        return ['bio', 'github', 'experience', 'relocate'];
+        return ['experience'];
+    }
+
+    /**
+     * Returns an array of optional experience form fields.
+     *
+     * @return array The array of optional experience form fields.
+     */
+    function getOptionalExperienceFormFields(): array {
+        return ['github', 'relocate', 'bio'];
     }
 }

@@ -8,28 +8,25 @@
  */
 
 class Validate {
+
     /**
      * Validates the given name.
      *
      * @param string $name The name to be validated.
      * @return bool Returns true if the name is valid, false otherwise.
      */
-    public static function validName(string $name): bool
-    {
+    public static function validName(string $name): bool {
         return ctype_alpha($name);
     }
 
     /**
-     * Validates a GitHub link by checking if it is a valid URL.
+     * Validates the given GitHub link.
      *
      * @param string $gitHubLink The GitHub link to be validated.
-     *
-     * @return bool True if the GitHub link is valid and is a valid URL, otherwise false.
+     * @return bool Returns true if the GitHub link is valid, false otherwise.
      */
-    public static function validGithub(string $gitHubLink): bool
-    {
-        return filter_var($gitHubLink,
-                FILTER_VALIDATE_URL) !== false;
+    public static function validGithub(string $gitHubLink): bool {
+        return preg_match("/^(https?:\/\/)?(www\.)?github\.com\/.+$/i", trim($gitHubLink)) === 1;
     }
 
     /**
@@ -39,9 +36,18 @@ class Validate {
      *
      * @return bool True if the value is not empty, otherwise false.
      */
-    public static function validExperience(string $value): bool
-    {
+    public static function validExperience(string $value): bool {
         return !empty($value);
+    }
+
+    /**
+     * Validates the given phone number.
+     *
+     * @param string $value The phone number to be validated.
+     * @return bool Returns true if the phone number is valid, false otherwise.
+     */
+    public static function validPhone(string $value): bool {
+        return preg_match("/^\d*$/", $value);
     }
 
     /**
@@ -51,8 +57,7 @@ class Validate {
      *
      * @return bool True if the email address is valid, otherwise false.
      */
-    public static function validEmail(string $email): bool
-    {
+    public static function validEmail(string $email): bool {
         return filter_var($email,
                 FILTER_VALIDATE_EMAIL) !== false;
     }
