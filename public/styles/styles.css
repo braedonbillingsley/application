@@ -49,3 +49,8 @@ input[type="checkbox"] {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.checkbox {
+    margin-top: 0;
+    margin-right: 5px;
+}
