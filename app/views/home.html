@@ -7,7 +7,10 @@
 -->
 <!DOCTYPE html>
 <html lang="en">
+
+<!--HEADER-->
 <include href="app/views/header.html"></include>
+
 <body>
 
 <!-- MAIN CONTAINER -->
@@ -15,32 +18,19 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <ul class="m-3 mb-0 pb-1 pt-0 p-4">
-            <li class="nav-item list-unstyled mb-2">
-                <a href="{{ @BASE }}" class="fs-6 anchor">Podcast USA LLC</a>
-            </li>
-            <li class="nav-item list-unstyled mb-2">
-                <a href="{{ @BASE }}" class="fs-5 anchor">Audio Engineer Internship</a>
-            </li>
-            <li class="nav-item list-unstyled">
-                <p class="small">Seattle Washington, Paid, 12 weeks</p>
-            </li>
-        </ul>
+        <!--NAV-->
+        <include href="app/views/nav.html"></include>
 
-        <!-- APPLY NOW button -->
-        <ul class="mb-0 p-0">
-            <li class="nav-item list-unstyled">
-                <a class="btn btn-success" href="info">
-                    APPLY NOW
-                </a>
-            </li>
-        </ul>
+        <!--APPLY-->
+        <include href="app/views/nav-apply.html"></include>
     </nav>
 
     <!-- JOB DESCRIPTION -->
     <div class="main p-4">
         <div class="row">
             <div class="col-lg-6 ">
+
+                <!-- ABOUT -->
                 <div class="m-3 mt-0">
                     <h3 class="text-center fw-normal">
                         About the Internship
@@ -53,6 +43,8 @@
                         audiences, leaving a lasting mark on the ever-evolving audio landscape. This internship is more than just
                         learning the ropes; it's about finding your voice and using it to make a difference, one soundbite at a time.
                     </p>
+
+                    <!-- MORE ABOUT -->
                     <h3 class="text-center fw-normal mt-5">More About Us</h3>
                     <hr class="mt-2">
                     <p>
@@ -62,12 +54,16 @@
                         four walls of the studio, sparking crucial conversations, challenging entrenched viewpoints, and igniting
                         positive change across the world.
                     </p>
+
+                    <!-- MEET THE TEAM -->
                     <h3 class="text-center fw-normal mt-5">Meet Our Team</h3>
                     <hr class="mt-2">
                 </div>
 
                 <!-- COMPANY QUOTES -->
                 <div class="m-5 mb-0 mt-0">
+
+                    <!-- QUOTE 1 -->
                     <blockquote class="fst-italic">
                         "We pride ourselves with producing quality driven media focused on making positive differences in meaningful
                         and intimate ways."
@@ -75,12 +71,16 @@
                             Braedon Billingsley, Chief Executive Podcaster
                         </footer>
                     </blockquote>
+
+                    <!-- QUOTE 2 -->
                     <blockquote class="fst-italic">
                         "You have to work hard and keep applying! One day I'll see your application and hire you on my team!"
                         <footer class="blockquote-footer p-2 mt-1">
                             John Doe, Senior Audio Engineer
                         </footer>
                     </blockquote>
+
+                    <!-- QUOTE 3 -->
                     <blockquote class="fst-italic">
                         "Wow, I have learned so much about engineering sounds and integrating it with other media. I highly recommend Podcast USA for all your podcast needs!"
                         <footer class="blockquote-footer p-2 mt-1">
@@ -89,7 +89,7 @@
                     </blockquote>
                 </div>
 
-                <!-- APPLY NOW button -->
+                <!-- APPLY NOW -->
                 <div class="text-center mb-4">
                     <hr class="mt-2">
                     <a href="info" class="btn btn-success">
@@ -106,8 +106,8 @@
     </div>
 </div>
 
-<!-- FOOTER -->
-<footer class="copyright text-center">
-</footer>
+<!--FOOTER-->
+<include href="app/views/footer.html"></include>
+
 </body>
 </html>
