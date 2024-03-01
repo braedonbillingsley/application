@@ -13,6 +13,6 @@
     "ext-ctype": "*"
   },
   "autoload": {
-    "classmap": [ "model/", "controller/" ]
+    "classmap": [ "app/controller", "app/model", "app/views/" ]
   }
 }

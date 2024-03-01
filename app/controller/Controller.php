@@ -16,7 +16,7 @@ class Controller {
 
     function home(): void {
         $view = new Template(); // Render home.html page
-        echo $view->render('views/home.html');
+        echo $view->render('app/views/home.html');
     }
 
     function info(mixed $f3): void { //TODO DataLayer and FormController
@@ -27,7 +27,7 @@ class Controller {
 
         // Render the personal-info page
         $view = new Template();
-        echo $view->render('views/personal-info.html');
+        echo $view->render('app/views/personal-info.html');
     }
 
     function experience(mixed $f3): void {
@@ -38,7 +38,7 @@ class Controller {
 
         // Render the experience page
         $view = new Template();
-        echo $view->render('views/experience.html');
+        echo $view->render('app/views/experience.html');
     }
 
     function mail(mixed $f3): void {
@@ -54,7 +54,7 @@ class Controller {
         }
         // Render the mailing-list page
         $view = new Template();
-        echo $view->render('views/mailing-list.html');
+        echo $view->render('app/views/mailing-list.html');
     }
 
     function summary(mixed $f3): void {
@@ -64,7 +64,7 @@ class Controller {
         }
         // Render the summary page
         $view = new Template();
-        echo $view->render('views/summary.html');
+        echo $view->render('app/views/summary.html');
     }
 
 }
