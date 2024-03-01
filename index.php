@@ -21,7 +21,7 @@ $con = new Controller($f3);
 $formController = new FormController();
 $dataLayer = new DataLayer();
 
-// Default route to HOME
+// Route to HOME | DEFAULT --> {{ @BASE }}
 $f3->route('GET /', function () {
     $GLOBALS['con']->home();
 });
