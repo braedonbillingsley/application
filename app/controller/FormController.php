@@ -57,26 +57,18 @@ class FormController {
      * @return bool Returns true if all required fields are valid, false otherwise.
      */
     private function processRequiredFields(object $f3, array $requiredFields): bool {
-
         // Initialize variable and default to true
         $formIsValid = true;
 
         // Validate each field and set to empty string if not required or valid.
         foreach ($requiredFields as $field) {
             $value = $_POST[$field] ?? '';
-            $fieldIsValid = $this->validateField($f3, $field, $value);
-
-            // If field is valid capitalize fist letters of name and save to session
-            if (!$fieldIsValid) {
+            if (!$this->validateField($f3, $field, $value)) {
                 $formIsValid = false;
-            } else {
-                if($field == 'first_name' || $field == 'last_name'){
-                    $_SESSION[$field] = ucwords(strtolower($value));
                 } else {
                     $_SESSION[$field] = $value;
                 }
             }
-        }
         return $formIsValid;
     }
 
@@ -137,44 +129,60 @@ class FormController {
         // Initialize variable and default to true
         $isValid = true;
 
-        // FIRST NAME and LAST NAME fields
-        if ($field == 'first_name' || $field == 'last_name') {
-            if (!Validate::validName($value)) {
-                $isValid = false;
+        switch ($field) {
 
-                // Set error message
-                $f3->set("{$field}_error", "Valid {$field} is required");
-            }
-        }
+            // FIRST NAME and LAST NAME fields
+            case 'first_name':
+            case 'last_name':
+                if (!Validate::validName($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Valid {$field} is required");
+                }
+                break;
 
-        // EMAIL field
-        else if ($field == 'email') {
-            if (!Validate::validEmail($value)) {
-                $isValid = false;
+            // EMAIL field
+            case 'email':
+                if (!Validate::validEmail($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Valid {$field} is required");
+                }
+                break;
 
-                // Set error message
-                $f3->set("{$field}_error", "Valid {$field} is required");
-            }
-        }
+            // PHONE fields
+            case 'phone':
+                if (!Validate::validPhone($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Valid {$field} is required");
+                }
+                break;
 
-        // PHONE fields
-        else if ($field == 'phone') {
-            if (!Validate::validPhone($value)) {
-                $isValid = false;
+            // EXPERIENCE fields
+            case 'experience':
+                if (!Validate::validExperience($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Please select your experience level");
+                }
+                break;
 
-                // Set error message
-                $f3->set("{$field}_error", "Valid {$field} is required");
-            }
-        }
+            // GITHUB field
+            case 'github':
+                if (!empty($value) && !Validate::validGithub($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Please enter a valid GitHub link");
+                }
+                break;
 
-        // EXPERIENCE fields
-        else if ($field == 'experience') {
-            if (!Validate::validExperience($value)) {
-                $isValid = false;
-
-                // Set error message
-                $f3->set("{$field}_error", "Valid {$field} is required");
-            }
+            default:
+                if (empty($value)) {
+                    $isValid = false;
+                    // Set error message
+                    $f3->set("{$field}_error", "Valid {$field} is required");
+                }
         }
         return $isValid;
     }
