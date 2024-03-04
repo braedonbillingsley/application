@@ -114,6 +114,11 @@ class FormController {
             } else if ($field == 'state' && isset($_POST['state'])) {
                 $selected_state = $_POST['state'];
                 $_SESSION[$field] = $selected_state;
+
+                // MAILING field
+            } else if($field == 'mailing') {
+                $value = filter_var($value, FILTER_VALIDATE_BOOLEAN);
+                $_SESSION[$field] = $value;
             }
         }
     }

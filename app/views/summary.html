@@ -59,14 +59,14 @@
                         </p>
                         <hr class="opacity-75">
                         <p><strong>Mailing Lists:</strong>
-                            {{ is_array(@selected_technologies) && count(@selected_technologies)
+                            {{ @mailing ? (is_array(@selected_technologies) && count(@selected_technologies)
                             ? implode(', ', array_map('ucfirst', @selected_technologies))
-                            : 'Not provided' }}
+                            : 'Not provided') : 'Mailing list opted out.' }}
                         </p>
                         <p><strong>Industry Lists:</strong>
-                            {{ is_array(@selected_industries) && count(@selected_industries)
+                            {{ @mailing ? (is_array(@selected_industries) && count(@selected_industries)
                             ? implode(', ', array_map('ucfirst', @selected_industries))
-                            : 'Not provided' }}
+                            : 'Not provided') : 'Mailing list opted out.' }}
                         </p>
                         <hr class="mt-2">
                     </div>

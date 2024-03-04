@@ -28,7 +28,7 @@ class DataLayer {
      * @return array The array of optional form fields for personal information. Each element represents a field name.
      */
     function getOptionalPersonalInfoFormFields(): array {
-        return ['state'];
+        return ['state', 'mailing'];
     }
 
     /**
